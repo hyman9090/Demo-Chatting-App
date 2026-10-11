@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Demo Chat</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Demo Chat</h1>
+    <span id="status" class="disconnected">disconnected</span>
+    <a href="/monitor" target="_blank">Open Network Monitor ↗</a>
+  </header>
+
+  <div id="login">
+    <input id="username" placeholder="your name, e.g. alice" autofocus>
+    <button id="joinBtn">Join chat</button>
+  </div>
+
+  <main id="chat" hidden>
+    <aside>
+      <h2>Online</h2>
+      <ul id="users"></ul>
+      <h2>Send to</h2>
+      <select id="to"><option value="all">everyone</option></select>
+    </aside>
+
+    <section id="middle">
+      <div id="messages"></div>
+      <form id="sendForm">
+        <input id="text" placeholder="type a message..." autocomplete="off">
+        <input type="file" id="image" accept="image/*">
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <aside id="inspector">
+      <h2>Packet Inspector</h2>
+      <p class="hint">Every message you send or receive is one JSON envelope
+         inside a WebSocket frame. Watch it here.</p>
+      <div id="packets"></div>
+    </aside>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

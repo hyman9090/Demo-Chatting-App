@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Network Monitor</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Network Monitor</h1>
+    <span id="status" class="disconnected">disconnected</span>
+    <span style="font-size:13px;color:#8fa3c8">
+      Clients on the left and right, server in the middle.
+      Every yellow dot is one WebSocket frame carrying one JSON envelope.
+    </span>
+  </header>
+
+  <div id="stage"></div>
+  <div id="monitorLog"></div>
+
+  <script src="/static/monitor.js"></script>
+</body>
+</html>
